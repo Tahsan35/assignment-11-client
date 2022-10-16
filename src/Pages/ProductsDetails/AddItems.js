@@ -3,26 +3,27 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const AddItems = () => {
+
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [stock, setStock] = useState('');
     const [img, setImg] = useState('');
     const [user] = useAuthState(auth);
     const email = user?.email;
+
     const handleName = event => {
         setName(event.target.value)
     }
     const handlePrice = event => {
-        setPrice(event.target.value)
+        setPrice(event.target.value);
     }
     const handleStock = event => {
-        setStock(event.target.value)
+        setStock(event.target.value);
     }
     const handleImg = event => {
-        setImg(event.target.value)
+        setImg(event.target.value);
     }
     const handleSubmit = (event) => {
-
         const url = 'https://ancient-bayou-60727.herokuapp.com/upload';
         fetch(url, {
             method: 'POST',
