@@ -11,7 +11,7 @@ function RequireAuth({ children }) {
     let location = useLocation();
     const [sendEmailVerification] = useSendEmailVerification(auth);
     if (loading) {
-        return <Spinner></Spinner>
+        return <Spinner></Spinner>;
     }
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace />;
@@ -30,8 +30,8 @@ function RequireAuth({ children }) {
                     >Verify Email</button>
                 </div>
             </div>
-        )
+        );
     }
     return children;
-}
+};
 export default RequireAuth;
