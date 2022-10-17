@@ -5,12 +5,12 @@ import Slider from './Slider';
 import Testimonial from './Testimonial';
 import Footer from '../Shared/Footer';
 import HomeInventory from './HomeInventory';
-import Brand1 from '../../images/brand1.jpg'
-import Brand2 from '../../images/brand2.jpg'
-import Brand3 from '../../images/brand3.jpg'
-import Brand4 from '../../images/brand4.jpg'
-import Brand5 from '../../images/brand5.jpg'
-import Brand6 from '../../images/brand6.jpg'
+import Brand1 from '../../images/brand1.jpg';
+import Brand2 from '../../images/brand2.jpg';
+import Brand3 from '../../images/brand3.jpg';
+import Brand4 from '../../images/brand4.jpg';
+import Brand5 from '../../images/brand5.jpg';
+import Brand6 from '../../images/brand6.jpg';
 
 const Home = () => {
     const [perfumes] = usePerfume();
@@ -78,7 +78,6 @@ const Home = () => {
                             <p className='text-center'>Juicy Couture</p>
                         </div>
                     </div>
-
                 </div>
             </div>
             {/* Feedback section */}
