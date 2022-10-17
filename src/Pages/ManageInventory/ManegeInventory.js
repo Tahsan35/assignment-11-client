@@ -14,17 +14,18 @@ const ManegeInventory = () => {
     const [img, setImg] = useState('');
 
     const handleName = event => {
-        setName(event.target.value)
+        setName(event.target.value);
     }
     const handlePrice = event => {
-        setPrice(event.target.value)
+        setPrice(event.target.value);
     }
     const handleStock = event => {
-        setStock(event.target.value)
+        setStock(event.target.value);
     }
     const handleImg = event => {
-        setImg(event.target.value)
+        setImg(event.target.value);
     }
+
     const handleSubmit = (event) => {
         const url = 'https://ancient-bayou-60727.herokuapp.com/upload';
         fetch(url, {
@@ -40,7 +41,6 @@ const ManegeInventory = () => {
             .then((response) => response.json())
             .then((data) => {
             });
-
     }
     return (
         <div>
@@ -53,7 +53,7 @@ const ManegeInventory = () => {
                         <input onChange={handleStock} className='w-full mb-8 bg-slate-100 px-1 py-[4px]' type="number" name="stock" placeholder='Stock' id="" />
                         <input onChange={handleImg} className='w-full mb-8 bg-slate-100 px-1 py-[4px]' type="text" name="Img" placeholder='Img URL' id="" />
                         <div className='flex justify-center'>
-                            <button onClick={handleSubmit} className='bg-cyan-600 px-10 rounded py-1 text-white' >Add new Item</button>
+                            <button onClick={handleSubmit} className='bg-blue-500 px-10 rounded py-1 text-white' >Add new Item</button>
                         </div>
                     </form>
                 </div>
@@ -62,8 +62,8 @@ const ManegeInventory = () => {
                 {
                     perfumes.map(perfume => <Allinventories
                         key={perfume._id}
-                        perfume={perfume}
-                    ></Allinventories>)
+                        perfume={perfume} >
+                    </Allinventories>)
                 }
             </div>
         </div>

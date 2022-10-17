@@ -41,7 +41,7 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 window.location.reload();
             });
     }
@@ -85,7 +85,6 @@ const Inventory = () => {
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div className='flex justify-center mt-6'>
