@@ -1,0 +1,50 @@
+[
+    {
+        "img": "https://i.ibb.co/whfDRXj/brand2.jpg",
+        "name": "Marc Jacobs Daisy Eau So Fresh",
+        "price": 55,
+        "stock": 20,
+        "describetion": "A comforting scent that emanates warmth and beauty, Marc Jacobs Daisy Eau So Fresh perfume for women...",
+        "seller": "Marc Jacobs"
+    },
+    {
+        "img": "https://i.ibb.co/Dwx9NwX/brand1.jpg",
+        "name": "Gucci Bloom",
+        "price": 50,
+        "stock": 25,
+        "describetion": " This floral fragrance has a blend of jasmine, tuberose, orris root, honeysuckle, and red flowers not...",
+        "seller": "Gucci"
+    },
+    {
+        "img": "https://i.ibb.co/kHdhtpp/engage.webp",
+        "name": "Hermes Un Jardin Sur Le Nil",
+        "price": 100,
+        "stock": 20,
+        "describetion": "From the house of Hermes, the legendary Jean Claude Ellena creates a fragrance that evokes the scent",
+        "seller": "Hermes"
+    },
+    {
+        "img": "https://i.ibb.co/whfDRXj/brand2.jpg",
+        "name": "Lucky Brand Body Spray",
+        "price": 55,
+        "stock": 20,
+        "describetion": "Launched by the design house of liz claiborne in 2000, lucky you is classified as a refreshing, flow...",
+        "seller": "Lucky"
+    },
+    {
+        "img": "https://i.ibb.co/whfDRXj/brand2.jpg",
+        "name": "Banana",
+        "price": 85,
+        "stock": 20,
+        "describetion": "Banana Republic Icon Fragrance Collection Pure White Eau De Parfum Spray, Unisex Perfume, 2.5 Oz....",
+        "seller": "Banana Jacobs"
+    },
+    {
+        "img": "https://i.ibb.co/NNWHMZs/axe-signature.webp",
+        "name": "Marc Jacobs Daisy Eau So Fresh",
+        "price": 100,
+        "stock": 20,
+        "describetion": "CK ONE by Calvin Klein is a naturally clean, pure, and contemporary fragrance with a refreshingly ne...",
+        "seller": "Marc Jacobs"
+    }
+]

@@ -12,17 +12,19 @@ import MyItems from "./Pages/ProductsDetails/MyItems"
 import AddItems from "./Pages/ProductsDetails/AddItems";
 import Signup from "./Pages/Signup/Signup";
 import Login from "./Pages/Signup/Login";
+
 function App() {
   return (
     <div>
       <Navbar></Navbar>
       <Routes>
-
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventories' element={<ManegeInventory></ManegeInventory>}></Route>
         <Route path='/inventory/:id' element={
-          <RequireAuth><Inventory></Inventory></RequireAuth>
+          <RequireAuth>
+            <Inventory></Inventory>
+          </RequireAuth>
         }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
@@ -33,7 +35,6 @@ function App() {
         <Route path='*' element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
       <ToastContainer />
-
     </div>
   );
 }

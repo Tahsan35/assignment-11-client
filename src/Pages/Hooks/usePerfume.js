@@ -4,7 +4,7 @@ const usePerfume = () => {
     const [perfumes, setPerfumes] = useState([]);
 
     useEffect(() => {
-        fetch('https://ancient-bayou-60727.herokuapp.com/perfume')
+        fetch('http://localhost:5000/perfume')
             .then(res => res.json())
             .then(data => {
                 setPerfumes(data);
