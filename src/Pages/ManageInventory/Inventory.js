@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Inventory = () => {
-
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [number, setNumber] = useState('');
@@ -11,9 +10,8 @@ const Inventory = () => {
     const handleManageInventories = () => {
         navigate('/inventories');
     }
-
     useEffect(() => {
-        const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`
+        const url = `http://localhost:5000/perfume/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -27,52 +25,50 @@ const Inventory = () => {
         const currentValue = parseInt(stock);
         const newValue = currentValue - 1
         return newValue;
-    }
-
+    };
     const handleDelivered = (newStock) => {
         const stock = updateStock(newStock);
-        const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`;
+        const url = `http://localhost:5000/perfume/${id}`;
         fetch(url, {
             method: 'PUT',
-            body: JSON.stringify({ stock: stock }),
             headers: {
-                'Content-type': 'application/json; charset=UTF-8',
+                'content-type': 'application/json'
             },
+            body: JSON.stringify({ stock: stock })
         })
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
                 window.location.reload();
-            });
-    }
-
+            })
+    };
     const handleRestock = (stocks) => {
         let count = parseInt(stocks);
         const stock = parseInt(number) + count;
-        const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`;
+        const url = `http://localhost:5000/perfume/${id}`;
         fetch(url, {
             method: 'PUT',
-            body: JSON.stringify({ stock: stock }),
             headers: {
-                'Content-type': 'application/json; charset=UTF-8',
+                'content-type': 'application/json'
             },
+            body: JSON.stringify({ stock: stock })
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 window.location.reload();
             });
-    }
+    };
     return (
         <div className='py-20'>
             <div className='flex justify-center items-center '>
                 <div className='w-[250px] sm:w-[500px] mx-auto shadow-xl p-2 sm:flex  justify-center items-center'>
                     <img className='w-[200px]' src={img} alt="" />
                     <div className='mx-auto'>
-                        <p>id:- {_id}</p>
+                        <p>id: {_id}</p>
                         <p>{name}</p>
-                        <p>Price:- <span className='font-bold text-lg'>${price}</span></p>
-                        <p>Stock:- {stock}</p>
+                        <p>Price: <span className='font-bold text-lg'>${price}</span></p>
+                        <p>Stock: {stock}</p>
                         <button onClick={() => handleDelivered(stock)} className='bg-cyan-600 text-white mt-2 px-1 py-[3px] rounded'>Delivered</button>
                         <div className='my-4'>
                             <form onSubmit={(e) => e.preventDefault()}>

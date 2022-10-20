@@ -7,10 +7,9 @@ const Allinventories = ({ perfume }) => {
     const [perfumes, setPerfumes] = usePerfume();
 
     const handleDeleteItem = (id) => {
-
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`
+            const url = `http://localhost:5000/perfume/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -19,7 +18,7 @@ const Allinventories = ({ perfume }) => {
                     const remaining = perfumes.filter(item => item._id !== id);
                     setPerfumes(remaining);
                     window.location.reload();
-                })
+                });
         }
     }
 
@@ -30,16 +29,18 @@ const Allinventories = ({ perfume }) => {
                 <div className='flex  items-center '>
                     <div>
                         <p>{name}</p>
-                        <p>Price:- ${price}</p>
-                        <p>Stock:- {stock}</p>
+                        <p>Price: ${price}</p>
+                        <p>Stock: {stock}</p>
                     </div>
                     <div className='absolute right-4 '>
-                        <button onClick={() => handleDeleteItem(_id)} className='flex items-center justify-center h-[35px] bg-red-200 w-[35px] rounded-full text-red-600'><BsTrash className='text-xl' /></button>
+                        <button onClick={() => handleDeleteItem(_id)} className='flex items-center justify-center h-[35px] bg-red-200 w-[35px] rounded-full text-red-600'>
+                            <BsTrash className='text-xl' />
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default Allinventories;

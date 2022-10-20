@@ -24,7 +24,7 @@ const Login = () => {
         errorItem = <p className='text-red-600'>Error: {error?.message}</p>
     };
     if (user) {
-        const url = 'https://ancient-bayou-60727.herokuapp.com/login';
+        const url = 'http://localhost:5000/login';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({

@@ -27,7 +27,7 @@ const ManegeInventory = () => {
     }
 
     const handleSubmit = (event) => {
-        const url = 'https://ancient-bayou-60727.herokuapp.com/upload';
+        const url = 'http://localhost:5000/upload';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({

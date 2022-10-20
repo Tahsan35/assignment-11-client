@@ -12,7 +12,7 @@ const MyItems = () => {
     useEffect(() => {
         const getUploadITem = async () => {
             const email = user?.email;
-            const url = `https://ancient-bayou-60727.herokuapp.com/upload?email=${email}`;
+            const url = `http://localhost:5000/upload?email=${email}`;
             const { data } = await axios.get(url);
             setProducts(data);
         }
@@ -23,7 +23,7 @@ const MyItems = () => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `https://ancient-bayou-60727.herokuapp.com/upload/${id}`
+            const url = `http://localhost:5000/upload/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

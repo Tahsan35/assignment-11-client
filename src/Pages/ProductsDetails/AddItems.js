@@ -12,7 +12,7 @@ const AddItems = () => {
     const email = user?.email;
 
     const handleName = event => {
-        setName(event.target.value)
+        setName(event.target.value);
     }
     const handlePrice = event => {
         setPrice(event.target.value);
@@ -24,22 +24,22 @@ const AddItems = () => {
         setImg(event.target.value);
     }
     const handleSubmit = (event) => {
-        const url = 'https://ancient-bayou-60727.herokuapp.com/upload';
+        const url = `http://localhost:5000/upload`;
         fetch(url, {
             method: 'POST',
+            headers: {
+                'authorization': `${user.email} ${localStorage.getItem("accessToken")}`,
+                'content-type': 'application/json'
+            },
             body: JSON.stringify({
                 name, price, stock, img, email
             }),
-            headers: {
-                'authorization': `${user.email} ${localStorage.getItem("accessToken")}`,
-                'Content-type': 'application/json',
-            },
         })
             .then((response) => response.json())
-            .then((data) => {
-            });
-
-    }
+            .then(result => {
+                console.log(result);
+            })
+    };
     return (
         <div className='w-[250px] sm:w-[450px] mx-auto border p-4 my-16'>
             <h1 className='text-center mb-4'>Add new Item</h1>
