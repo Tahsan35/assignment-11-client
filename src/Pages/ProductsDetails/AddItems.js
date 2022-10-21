@@ -24,7 +24,7 @@ const AddItems = () => {
         setImg(event.target.value);
     }
     const handleSubmit = (event) => {
-        const url = `http://localhost:5000/upload`;
+        const url = `https://assignment-11-server.vercel.app/upload`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -4,7 +4,7 @@ const usePerfume = () => {
     const [perfumes, setPerfumes] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/perfume')
+        fetch('https://assignment-11-server.vercel.app/perfume')
             .then(res => res.json())
             .then(data => {
                 setPerfumes(data);

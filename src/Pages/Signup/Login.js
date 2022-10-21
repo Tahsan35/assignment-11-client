@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 
 
 const Login = () => {
-
     const [user] = useAuthState(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,15 +23,15 @@ const Login = () => {
         errorItem = <p className='text-red-600'>Error: {error?.message}</p>
     };
     if (user) {
-        const url = 'http://localhost:5000/login';
+        const url = 'https://assignment-11-server.vercel.app/login';
         fetch(url, {
             method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
             body: JSON.stringify({
                 email: user.email
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
+            })
         })
             .then((response) => response.json())
             .then((data) => {

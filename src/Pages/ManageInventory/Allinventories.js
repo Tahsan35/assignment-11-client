@@ -9,7 +9,7 @@ const Allinventories = ({ perfume }) => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `http://localhost:5000/perfume/${id}`
+            const url = `https://assignment-11-server.vercel.app/perfume/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

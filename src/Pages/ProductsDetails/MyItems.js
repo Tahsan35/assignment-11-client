@@ -12,7 +12,7 @@ const MyItems = () => {
     useEffect(() => {
         const getUploadITem = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/upload?email=${email}`;
+            const url = `https://assignment-11-server.vercel.app/upload?email=${email}`;
             const { data } = await axios.get(url);
             setProducts(data);
         }
@@ -23,7 +23,7 @@ const MyItems = () => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `http://localhost:5000/upload/${id}`
+            const url = `https://assignment-11-server.vercel.app/upload/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

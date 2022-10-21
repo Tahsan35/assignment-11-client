@@ -11,7 +11,7 @@ const Inventory = () => {
         navigate('/inventories');
     }
     useEffect(() => {
-        const url = `http://localhost:5000/perfume/${id}`;
+        const url = `https://assignment-11-server.vercel.app/perfume/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -28,7 +28,7 @@ const Inventory = () => {
     };
     const handleDelivered = (newStock) => {
         const stock = updateStock(newStock);
-        const url = `http://localhost:5000/perfume/${id}`;
+        const url = `https://assignment-11-server.vercel.app/perfume/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -45,7 +45,7 @@ const Inventory = () => {
     const handleRestock = (stocks) => {
         let count = parseInt(stocks);
         const stock = parseInt(number) + count;
-        const url = `http://localhost:5000/perfume/${id}`;
+        const url = `https://assignment-11-server.vercel.app/perfume/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
